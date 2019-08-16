@@ -123,6 +123,63 @@
 
 ### # 11.4 Message Navigation pt.1
 
+- navigation/MessageNavigation.js
+  - withNavigation HOC
+- screens/Messages/
+  - Message.js
+  - Messages.js
+- screens/
+  - Home => Tabs/Home.js
+  - Notifications => Tbas/Notifications.js
+  - Profile => Tbas/Profile.js
+  - Search => Tbas/Search.js
+
 ### # 11.5 Message Navigation pt.2
 
+- components/MessageLink.js
+- navigation/MainNavigation.js
+  - MessageNavigation 추가
+- navigation/TabNavigation.js
+  - Home 스크린 우측 헤더에 MessageLink 컴포넌트 추가
+    - headerRight
+
+#### 실행결과
+
+![헤더 오른쪽에 MessageLink 활성화](https://imgur.com/XZNkF4c.gif)
+
 ### # 11.6 Navigation Conclusions
+
+### # 12.0 AuthHome
+
+- /constants.js
+
+- /screens/Auth/AuthHome.js
+
+#### 실행결과
+
+![](https://imgur.com/sHAzceu.gif)
+
+### # 12.1 Auth Components pt.1
+
+> yarn add prop-types
+
+- components/
+  - AuthButton.js
+  - AuthInput.js
+- screens/Auth
+  - AuthHome.js, Login.js
+    - AuthButton 반영
+    - AuthInput 반영
+
+#### 실행결과
+
+![로그인 인풋 삽입](https://imgur.com/vUtFFrQ.gif)
+
+### # 12.2 Auth Components pt.2
+
+- /hooks/useInput.js
+- TextInput 컴포넌트 입력 값 변경을 반영해보자.
+
+#### 실행결과
+
+![](https://imgur.com/uATWmMI.gif)
