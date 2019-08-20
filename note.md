@@ -183,3 +183,59 @@
 #### 실행결과
 
 ![](https://imgur.com/uATWmMI.gif)
+
+### # 12.3 Login pt.1
+
+- Login.js
+  - email vaildation check
+    - 로그인 인풋에 입력값을 넣은 후, 로그인 버튼을 눌렀을 떄
+  - 로그인 인풋에 커서를 둔 상태에서 바깥 영역 클릭 시 포커싱 아웃
+    - TouchableWithoutFeedback
+    - Keyboard.dismiss
+- AuthInput.js
+  - 인풋 포커싱 상태에서는 폰의 키보드가 활성화 되는데, return(enter) 키를 누르면 키보드를 없앤다.
+    - returnKeyType
+  - 핸드폰 키보드 창의 return 키를 눌러서 키보드 창을 없앤 후 handleLogin() 실행
+    - onEndEditing
+  - 이메일 인풋은 기본적으로 단어 correct 추천 기능을 제공한다. Gmail => gmail 등, 이것을 false 로 변경
+    - autoCorrect
+
+### # 12.4 Login pt.2
+
+- Login.js
+  - 로그인 요청 중일 때 버튼 안에 로더 표현
+    - ActivityIndicator 컴포넌트
+
+#### 실행결과
+
+![로그인 요청 중일 때 로더 표현](https://imgur.com/Kb8AP3N.jpg)
+
+- AuthButton.js
+  - 로그인 요청 중일 때 인풋 수정 / 로그인 버튼 클릭을 비활성화
+    - disabled
+
+#### 실행결과
+
+![로그인 요청 중일 때, 다른 이벤트 비활성화]()
+
+- /screens/Auth/AuthQueries.js
+  - LOG_IN 뮤테이션
+
+### # 12.5 Login pt.3
+
+- 인풋 포커싱 상태에서 외부 영역 클릭 시 에러 발생
+  - onEndEditing => onSubmitEditing 으로 변경
+- apollog uri 옵션 수정
+  - /graphql 제거
+- requestSecret() 리스폰스 결과 수정
+
+### # 12.6 Confirm
+
+- /screens/Auth/Confirm.js
+  - Login 페이지에서 이메일 입력 후 confirm 페이지로 이동할 때, email 값을 함께 전달해주어야 한다.
+  - navigate
+
+### # 12.7 Signup
+
+- App.js, preLoad() 에서 강제 로그아웃 시키기
+  - await AsyncStorage.clear()
