@@ -1,3 +1,8 @@
+### 문제점
+
+로그인 페이지에서 이메일 입력 시, 해당 이메일로 loginSecret이 넘어가지 않음
+사인업 페이지에서 가입되지 않은 이메일 입력 시 가입된 이메일로 인식함.
+
 ### eslint 설정
 
 > npx install-peerdeps --dev eslint-config-airbnb
@@ -251,3 +256,5 @@
 
 - App.js, preLoad() 에서 강제 로그아웃 시키기
   - await AsyncStorage.clear()
+
+### # 19.0 Deploying Frontend to Netlify

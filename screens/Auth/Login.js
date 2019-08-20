@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { useMutation } from 'react-apollo-hooks';
 import AuthButton from '../../components/AuthButton';
 import AuthInput from '../../components/AuthInput';
 import useInput from '../../hooks/useInput';
-import { useMutation } from 'react-apollo-hooks';
 import { LOG_IN } from './AuthQueries';
 
 const View = styled.View`
@@ -34,9 +34,12 @@ export default ({ navigation }) => {
     }
     try {
       setLoading(true);
+      Alert.alert('1');
       const {
         data: { requestSecret }
       } = await requestSecretMutation();
+      Alert.alert('2');
+      Alert.alert(requestSecret);
       if (requestSecret) {
         Alert.alert('Check your email');
         navigation.navigate('Confirm', { email: value });
