@@ -1,3 +1,8 @@
+### eslint 설정
+
+> npx install-peerdeps --dev eslint-config-airbnb
+> yarn eslint --init
+
 ### # 10.0 Creating the Project
 
 > yarn global add expo-cli
@@ -233,7 +238,14 @@
 
 - /screens/Auth/Confirm.js
   - Login 페이지에서 이메일 입력 후 confirm 페이지로 이동할 때, email 값을 함께 전달해주어야 한다.
-  - navigate
+  - navigation.getParam
+- /AuthContext.js
+  - 로그인 성공 시 반환으로 받은 token 값도 로컬 storage에 저장
+  - logUseIn()
+    - AsyncStorage.setItem('jwt', token)
+- /screens/Auth/AuthQueries.js
+  - CREATE_USER 뮤테이션 정의
+  - CONFIRM_SECRET 뮤테이션 정의
 
 ### # 12.7 Signup
 
