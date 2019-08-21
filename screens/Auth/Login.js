@@ -34,11 +34,9 @@ export default ({ navigation }) => {
     }
     try {
       setLoading(true);
-      Alert.alert('1');
       const {
         data: { requestSecret }
       } = await requestSecretMutation();
-      Alert.alert('2');
       Alert.alert(requestSecret);
       if (requestSecret) {
         Alert.alert('Check your email');
