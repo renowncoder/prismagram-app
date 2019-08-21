@@ -256,5 +256,3 @@
 
 - App.js, preLoad() 에서 강제 로그아웃 시키기
   - await AsyncStorage.clear()
-
-### # 19.0 Deploying Frontend to Netlify

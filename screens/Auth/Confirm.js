@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import useInput from '../../hooks/useInput';
-import { useLogIn } from '../../AuthContext';
 import { useMutation } from 'react-apollo-hooks';
+import { Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { CONFIRM_SECRET } from './AuthQueries';
-import { Alert } from 'react-native';
+import { useLogIn } from '../../AuthContext';
+import useInput from '../../hooks/useInput';
+import AuthInput from '../../components/AuthInput';
+import AuthButton from '../../components/AuthButton';
 
 const View = styled.View`
   justify-content: center;

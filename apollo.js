@@ -1,5 +1,7 @@
+import { SERVER_URL } from 'react-native-dotenv';
+
 const options = {
-  uri: 'http://10.0.1.4:4000'
+  uri: SERVER_URL
 };
 
 export default options;
