@@ -8,6 +8,10 @@
 > npx install-peerdeps --dev eslint-config-airbnb
 > yarn eslint --init
 
+다시
+
+> yarn add -D eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint
+
 ### # 10.0 Creating the Project
 
 > yarn global add expo-cli
@@ -256,3 +260,90 @@
 
 - App.js, preLoad() 에서 강제 로그아웃 시키기
   - await AsyncStorage.clear()
+
+### # 12.8 Facebook Login pt.1
+
+- 페이스북 개발자 페이지에서 앱 생성
+  - 플랫폼으로 ios, 안드로이드 등록 (참고: https://docs.expo.io/versions/latest/sdk/facebook/)
+- Signup.js
+  - 로그인 버튼
+  - 로그인 핸들러, fbLogin(개인 앱 아이디 넣어야함)
+
+### # 12.9 Facebook Login pt.2
+
+- useInput.js, 반환값에 setValue 추가
+- 페북 연결 버튼을 누르면 페북 계정 정보로부터 signup에 필요한 정보 읽어오기
+
+### # 12.10 Google Login
+
+- 구글 api console 에서 앱을 만들어서 앱 인증용 id 값을 가져온다.
+
+#### 실행결과
+
+![구글 로그인 버튼을 누르고 로그인하면 해당 정보를 가져와서 폼에 넣어 줌](https://imgur.com/NowqjeM.gif)
+
+### # 13.0 TabIcons pt.1
+
+#### 실행결과
+
+![상/하단 메뉴 icon으로 변경](https://imgur.com/fljk8gV.gif)
+
+### # 13.1 TabIcons pt.2
+
+#### 실행결과
+
+![탭 아이콘에 백그라운드 스타일 적용](https://imgur.com/aKU4ncw.gif)
+
+### # 13.2 TabBar, Styles, Loader
+
+#### 실행결과
+
+![탭바 스타일이 아니라 탭 스타일, 로더](https://imgur.com/MO6TUzz.gif)
+
+### # 14.0 Apollo Context
+
+- 서버에 보내는 모든 요청에 jwt 넣기
+
+### # 14.1 ScrollView and RefreshControl
+
+- Home.js
+  - 홈 화면에서 슬라이드 다운 시 리프레쉬되도록 설정
+
+#### 실행결과
+
+![슬라이드 다운 시 새 데이터 로드(리프레시)](https://imgur.com/c28jmnH.gif)
+
+### # 15.0 Post Component Header
+
+#### 실행결과
+
+![포스트 작성자 헤더에 나타남](https://imgur.com/95orsrj.jpg)
+
+### # 15.1 Post Component Swiper
+
+- react-native-swiper 사용
+  - yarn add react-native-swiper
+
+#### 실행결과
+
+![포스트에 연결된 파일 스와이프](https://imgur.com/v0lkTwv.gif)
+
+### # 15.2 Finishing Post Component
+
+![포스트 하단에 likes, username, caption, comments 달기](https://imgur.com/NzzN8Tx.jpg)
+
+### # 15.3 Toggle Like
+
+#### 실행결과
+
+![좋아요 기능 구현](https://imgur.com/75JWSE5.gif)
+
+### # 16.0 Search as HeaderTitle pt.1
+
+### # 16.1 Search as HeaderTitle pt.2
+
+#### 실행결과
+
+![검색바 구현](https://imgur.com/IkIAxQ5.gif)
+
+### # 16.3 Search Query
