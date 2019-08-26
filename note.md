@@ -346,4 +346,25 @@
 
 ![검색바 구현](https://imgur.com/IkIAxQ5.gif)
 
-### # 16.3 Search Query
+### # 16.2 Search Query
+
+- 검색어 입력 후 search 버튼을 눌렀을 때 query 요청 날리고, 콘솔에 결과 찍어보기
+- 스크롤뷰로 리페치 해보기
+
+#### 실행결과
+
+- 안드로이드 폰 시뮬레이터 연결해서 콘솔 확인해보기
+  ![](https://imgur.com/x0SXPN9.gif)
+
+### # 16.3 Search Photo
+
+- Seoul 이라고 입력 후 검색 후 다시 입력 창 포커스 두고 검색 버튼을 누르면 요청을 새로 날리는게 아니라 캐시에서 가져온다.
+- 항상 새롭게 요청을 날리도록 할 수 있다. useQuery, fetchPolicy
+
+### # 16.4 Photo Detail
+
+- 검색 => 검색 결과 클릭 => 디테일 페이지
+
+#### 실행결과
+
+![](https://imgur.com/cpbBWpN.gif)

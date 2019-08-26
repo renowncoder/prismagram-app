@@ -38,8 +38,8 @@ export default ({ navigation }) => {
       username: usernameInput.value,
       email: emailInput.value,
       firstName: fNameInput.value,
-      lastName: lNameInput.value
-    }
+      lastName: lNameInput.value,
+    },
   });
   const updateFormData = (email, firstName, lastName) => {
     emailInput.setValue(email);
@@ -53,7 +53,7 @@ export default ({ navigation }) => {
     try {
       setLoading(true);
       const { type, token } = await Facebook.logInWithReadPermissionsAsync('606890843171608', {
-        permissions: ['public_profile', 'email']
+        permissions: ['public_profile', 'email'],
       });
       if (type === 'success') {
         const response = await fetch(
@@ -76,11 +76,11 @@ export default ({ navigation }) => {
       setLoading(true);
       const result = await Google.logInAsync({
         iosClientId: GOOGLE_ID,
-        scopes: ['profile', 'email']
+        scopes: ['profile', 'email'],
       });
       if (result.type === 'success') {
         const user = await fetch('https://www.googleapis.com/userinfo/v2/me', {
-          headers: { Authorization: `Bearer ${result.accessToken}` }
+          headers: { Authorization: `Bearer ${result.accessToken}` },
         });
         const { email, family_name, given_name } = await user.json();
         updateFormData(email, given_name, family_name);
@@ -112,7 +112,7 @@ export default ({ navigation }) => {
     try {
       setLoading(true);
       const {
-        data: { createAccount }
+        data: { createAccount },
       } = await createAccountMutation();
       if (createAccount) {
         Alert.alert('Account created', 'Log in now!');
