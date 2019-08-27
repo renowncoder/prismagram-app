@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Swiper from 'react-native-swiper';
 import { gql } from 'apollo-boost';
 import { useMutation } from 'react-apollo-hooks';
+import { withNavigation } from 'react-navigation';
 import constants from '../constants';
 import styles from '../styles';
 
@@ -61,6 +62,7 @@ const Post = ({
   caption,
   comments = [],
   isLiked: isLikedProp,
+  navigation,
 }) => {
   const [isLiked, setIsLiked] = useState(isLikedProp);
   const [likeCount, setLikeCount] = useState(likeCountProp);
@@ -84,13 +86,13 @@ const Post = ({
   return (
     <Container>
       <Header>
-        <Touchable>
+        <Touchable onPress={() => navigation.navigate('UserDetail', { username: user.username })}>
           <Image
             style={{ height: 40, width: 40, borderRadius: 20 }}
             source={{ uri: user.avatar }}
           />
         </Touchable>
-        <Touchable>
+        <Touchable onPress={() => navigation.navigate('UserDetail', { username: user.username })}>
           <HeaderUserContainer>
             <Bold>{user.username}</Bold>
             <Location>{location}</Location>
@@ -119,8 +121,8 @@ const Post = ({
                       ? 'ios-heart'
                       : 'ios-heart-empty'
                     : isLiked
-                    ? 'md-heart'
-                    : 'md-heart-empty'
+                      ? 'md-heart'
+                      : 'md-heart-empty'
                 }
               />
             </IconContainer>
@@ -179,4 +181,4 @@ Post.propTypes = {
   createdAt: PropTypes.string.isRequired,
 };
 
-export default Post;
+export default withNavigation(Post);

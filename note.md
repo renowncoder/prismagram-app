@@ -368,3 +368,17 @@
 #### 실행결과
 
 ![](https://imgur.com/cpbBWpN.gif)
+
+### # 17.0 Profile Screen
+
+### # 17.1 User Detail Screen
+
+### # 17.2 UserProfile Component Styles
+
+- Profile 페이지, username 동적으로 가져오기
+
+#### 실행결과
+
+![](https://imgur.com/LMMk4OS.jpg)
+
+### # 17.3 UserProfile Photo Rendering
